@@ -17,9 +17,8 @@ RUN apt-get update -y && \
 ENV PATH="/usr/local/cuda/bin:${PATH}"
 
 # Install pytorch
-ARG PYTORCH="2.1.1"
-ARG CUDA="121"
-RUN pip3 install --no-cache-dir -U torch==$PYTORCH torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu$CUDA
+RUN pip3 install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/cu121
+# RUN pip3 install --no-cache-dir -U torch==$PYTORCH torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu$CUDA
 
 COPY --chmod=755 start-ssh-only.sh /start.sh
 
