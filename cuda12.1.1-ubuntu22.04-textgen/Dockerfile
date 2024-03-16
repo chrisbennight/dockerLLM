@@ -15,12 +15,12 @@ WORKDIR /root
 RUN git clone https://github.com/oobabooga/text-generation-webui && \
     cd text-generation-webui && \
     pip3 install -r requirements.txt && \
-    bash -c 'for req in extensions/*/requirements.txt ; do pip3 install -r "$req" ; done' && \
+    bash -c 'for req in extensions/*/requirements.txt ; do pip3 install -r "$req" ; done' && 
     #pip3 uninstall -y exllama && \
-    mkdir -p repositories && \
-    cd repositories && \
-    git clone https://github.com/turboderp/exllama && \
-    pip3 install -r exllama/requirements.txt
+    #mkdir -p repositories && \
+    #cd repositories && \
+    #git clone https://github.com/turboderp/exllama && \
+    #pip3 install -r exllama/requirements.txt
 
 # Install AutoGPTQ, overwriting the version automatically installed by text-generation-webui
 # May not be needed any more? But just in case
