@@ -26,6 +26,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run Deploy
         run: |
-          python3 build_oneclick.py
+          sudo python3 build_oneclick.py
     # curl -X POST https://portainer.cacahuate.org/api/stacks/webhooks/bd057cf2-c453-40a5-8d03-13ef13024609
           
